@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Subject Picker Section-->
+    <LinearLayout
+        android:id="@+id/section_subject_picker"
+        style="@style/BasicVerticalLL"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <!--User picks subject here-->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_subjects"
+            style="@style/ShapeLL"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_sub_english"
+                style="@style/BasicView"
+                android:text="@string/subEnglish" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_sub_mathematics"
+                style="@style/BasicView"
+                android:text="@string/subMathematics" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+    <!--Starts the selected quiz-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_start"
+        style="@style/BasicView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/fabDescription"
+        android:src="@drawable/ic_arrow"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorButton"
+        app:rippleColor="@color/colorRipple"
+        app:tint="@color/colorText" />
+
+    <!--Quiz Section-->
+    <ScrollView
+        android:id="@+id/section_quiz"
+        style="@style/ScrollViewStyle"
+        android:visibility="gone">
+
+        <!--Contains all three subject quiz.-->
+        <LinearLayout style="@style/MatchVerticalLL">
+
+            <!--Empty Space-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <!--English Quiz-->
+            <LinearLayout
+                android:id="@+id/quiz_english"
+                style="@style/QuizContainerStyle"
+                android:visibility="gone">
+
+                <!--Subject Name-->
+                <TextView
+                    style="@style/BasicView"
+                    android:text="@string/subEnglish"
+                    android:textSize="45sp" />
+
+                <TextView
+                    style="@style/QuizLabelStyle"
+                    android:text="@string/labelQuiz" />
+
+                <!--Question 1-->
+                <LinearLayout style="@style/QuestionContainer">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberOne" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/EQ1" />
+
+                    <!--Question 1 - A-->
+                    <LinearLayout
+                        style="@style/BasicView"
+                        android:layout_marginVertical="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1AP1" />
+
+                        <TextView
+                            android:id="@+id/blank_one_a"
+                            style="@style/BlankStyle"
+                            android:layout_width="80dp"
+                            android:background="@drawable/shape_blank" />
+
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1AP2" />
+
+                    </LinearLayout>
+
+                    <!--Question 1 - A - List-->
+                    <LinearLayout style="@style/ListStyle">
+
+                        <com.google.android.material.chip.ChipGroup
+                            style="@style/BasicView"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/BasicView"
+                                android:text="@string/EQ1AH1" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/BasicView"
+                                android:text="@string/EQ1AH2" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/BasicView"
+                                android:text="@string/EQ1AH3" />
+                        </com.google.android.material.chip.ChipGroup>
+
+                    </LinearLayout>
+
+                    <!--Question 1 - B-->
+                    <LinearLayout
+                        style="@style/BasicView"
+                        android:layout_marginVertical="16dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1BP1" />
+
+                        <TextView
+                            style="@style/BlankStyle"
+                            android:layout_width="60dp"
+                            android:background="@drawable/shape_blank" />
+
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1BP2" />
+
+                    </LinearLayout>
+
+                    <!--Question 1 - B - List-->
+                    <LinearLayout style="@style/ListStyle">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/question_one_b_list"
+                            style="@style/BasicView"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/question"
+                                style="@style/BasicView"
+                                android:text="@string/EQ1BH1" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/BasicView"
+                                android:text="@string/EQ1BH2" />
+
+                            <com.google.android.material.chip.Chip
+                                style="@style/BasicView"
+                                android:text="@string/EQ1BH3" />
+                        </com.google.android.material.chip.ChipGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Question 2-->
+                <LinearLayout style="@style/QuestionContainer">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberTwo" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginVertical="16dp"
+                        android:text="@string/EQ2" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ2A" />
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:hint="@string/hintWord"
+                        android:importantForAutofill="no" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ2B" />
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:hint="@string/hintWord"
+                        android:importantForAutofill="no" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ2C" />
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:layout_marginBottom="0dp"
+                        android:hint="@string/hintWord"
+                        android:importantForAutofill="no" />
+
+                </LinearLayout>
+
+                <!--Question 3-->
+                <LinearLayout style="@style/QuestionContainer">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberThree" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginVertical="16dp"
+                        android:text="@string/EQ3" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ3A" />
+
+                    <TextView
+                        style="@style/BlankStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/shape_blank" />
+
+                    <LinearLayout
+                        style="@style/ListStyle"
+                        android:layout_marginVertical="16dp">
+
+                        <RadioGroup style="@style/BasicView">
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3AH1" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3AH2" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3AH3" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ3B" />
+
+                    <TextView
+                        style="@style/BlankStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/shape_blank" />
+
+                    <LinearLayout
+                        style="@style/ListStyle"
+                        android:layout_marginVertical="16dp">
+
+                        <RadioGroup style="@style/BasicView">
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3BH1" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3BH2" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3BH3" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/EQ3C" />
+
+                    <TextView
+                        style="@style/BlankStyle"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/shape_blank" />
+
+                    <LinearLayout
+                        style="@style/ListStyle"
+                        android:layout_marginTop="16dp">
+
+                        <RadioGroup style="@style/BasicView">
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3CH1" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3CH2" />
+
+                            <RadioButton
+                                style="@style/RadioButtonStyle"
+                                android:text="@string/EQ3CH3" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Mathematics Quiz-->
+            <LinearLayout
+                android:id="@+id/quiz_mathematics"
+                style="@style/QuizContainerStyle"
+                android:visibility="gone">
+
+                <!--Subject Name-->
+                <TextView
+                    style="@style/BasicView"
+                    android:text="@string/subMathematics"
+                    android:textSize="45sp" />
+
+                <TextView
+                    style="@style/QuizLabelStyle"
+                    android:text="@string/labelQuiz" />
+
+                <!--Question 1-->
+                <LinearLayout style="@style/QuestionContainer">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberOne" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/MQ1" />
+
+                    <TextView
+                        style="@style/NumberStyle"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/number" />
+
+                    <LinearLayout
+                        style="@style/ListStyle"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            style="@style/CheckBoxStyle"
+                            android:text="@string/MQ1O1" />
+
+                        <CheckBox
+                            style="@style/CheckBoxStyle"
+                            android:text="@string/MQ1O2" />
+
+                        <CheckBox
+                            style="@style/CheckBoxStyle"
+                            android:text="@string/MQ1O3" />
+
+                        <CheckBox
+                            style="@style/CheckBoxStyle"
+                            android:text="@string/MQ1O4" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Question 2-->
+                <LinearLayout
+                    style="@style/QuestionContainer"
+                    tools:ignore="TooManyViews">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberTwo" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/MQ2" />
+
+                    <LinearLayout
+                        style="@style/BasicVerticalLL"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            style="@style/NumberStyle"
+                            android:letterSpacing="1"
+                            android:text="@string/numberOne" />
+
+                        <TextView
+                            style="@style/NumberStyle"
+                            android:layout_marginBottom="8dp"
+                            android:letterSpacing="1"
+                            android:text="@string/numberTwo" />
+
+                        <View style="@style/Divider" />
+
+                        <EditText
+                            style="@style/EditTextEntryStyle"
+                            android:layout_marginBottom="0dp"
+                            android:importantForAutofill="no"
+                            android:letterSpacing="0.5" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Question 3-->
+                <LinearLayout
+                    style="@style/QuestionContainer"
+                    tools:ignore="TooManyViews">
+
+                    <TextView
+                        style="@style/QuizLabelStyle"
+                        android:text="@string/questionNumberThree" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:layout_marginVertical="16dp"
+                        android:text="@string/MQ3" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/MQ3A" />
+
+                    <EditText
+                        style="@style/EditTextEntryStyle"
+                        android:layout_width="100dp"
+                        android:layout_marginStart="24dp"
+                        android:importantForAutofill="no" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/MQ3B" />
+
+                    <EditText
+                        style="@style/EditTextEntryStyle"
+                        android:layout_width="100dp"
+                        android:layout_marginStart="24dp"
+                        android:importantForAutofill="no" />
+
+                    <TextView
+                        style="@style/BasicView"
+                        android:text="@string/MQ3C" />
+
+                    <EditText
+                        style="@style/EditTextEntryStyle"
+                        android:layout_width="100dp"
+                        android:layout_marginStart="24dp"
+                        android:importantForAutofill="no" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--User submits or resets the quiz-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="16dp">
+
+                <!--Resets Quiz-->
+                <TextView
+                    android:id="@+id/textView_reset"
+                    style="@style/resetSubmitStyle"
+                    android:background="@drawable/ripple_reset"
+                    android:text="@string/reset" />
+
+                <!--Divider-->
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent" />
+
+                <!--Submits Quiz-->
+                <TextView
+                    android:id="@+id/textView_submit"
+                    style="@style/resetSubmitStyle"
+                    android:background="@drawable/ripple_submit"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+
+            <!--Empty Space-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

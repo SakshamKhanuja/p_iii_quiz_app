@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorBackground</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="chipStyle">@style/ChipStyle</item>
+        <item name="android:textColorHint">@color/colorDivider</item>
+    </style>
+
+    <!--Chip Style-->
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipBackgroundColor">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="closeIconVisible">false</item>
+        <item name="chipStartPadding">8dp</item>
+        <item name="chipEndPadding">8dp</item>
+        <item name="chipMinHeight">40dp</item>
+    </style>
+
+    <!--Basic View having width and height parameters set as "wrap_content"-->
+    <style name="BasicView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--Basic LinearLayout-->
+    <style name="BasicVerticalLL" parent="BasicView">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--Match LinearLayout-->
+    <style name="MatchVerticalLL" parent="BasicVerticalLL">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!--Quiz Picker-->
+    <style name="ShapeLL" parent="BasicView">
+        <item name="android:background">@drawable/shape_hint</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <!--Quiz Title Style-->
+    <style name="QuizTitleStyle" parent="BasicView">
+        <item name="android:textSize">45sp</item>
+    </style>
+
+    <!--ScrollView Style-->
+    <style name="ScrollViewStyle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <!--Quiz Container Style-->
+    <style name="QuizContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <!--Used to style the "Quiz" Label in each subjects' quiz.-->
+    <style name="QuizLabelStyle" parent="BasicView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <!--Main Button Style-->
+    <style name="MainButtonStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.4</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--Reset / Submit Style-->
+    <style name="resetSubmitStyle" parent="MainButtonStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--Horizontal Line-->
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <style name="QuestionDivider" parent="Divider">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <!--Blank Style-->
+    <style name="BlankStyle">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@drawable/shape_blank</item>
+    </style>
+
+    <style name="EditTextStyle" parent="ShapeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="EditTextEntryStyle" parent="EditTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="ListStyle" parent="ShapeStyle">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ShapeStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_hint</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="QuestionContainer" parent="MatchVerticalLL">
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@drawable/shape_question_container</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="BasicView">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <style name="CheckBoxStyle" parent="BasicView">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:paddingStart">16dp</item>
+    </style>
+
+    <style name="NumberStyle" parent="BasicView">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

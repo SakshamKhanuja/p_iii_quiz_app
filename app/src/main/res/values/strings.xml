@@ -1,0 +1,77 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Quiz App</string>
+
+    <!--Quiz Picker Section-->
+    <string name="subEnglish">English</string>
+    <string name="subMathematics">Mathematics</string>
+    <string name="fabDescription">Start the quiz.</string>
+
+    <!--About Quiz App Toasts-->
+    <string name="toastSelected">All The Best!</string>
+    <string name="toastNotSelected">You haven\'t picked a Subject.</string>
+
+    <!--English Section-->
+
+    <!--Common among Subject Quiz-->
+    <string name="labelQuiz">Quiz</string>
+    <string name="reset">Reset</string>
+    <string name="submit">Submit</string>
+    <string name="questionNumberOne">Question 1</string>
+    <string name="questionNumberTwo">Question 2</string>
+    <string name="questionNumberThree">Question 3</string>
+    <string name="list">List</string>
+    <string name="hintWord">Type word here…</string>
+
+    <!--English Question 1 (10 marks)-->
+    <string name="EQ1">Read each sentence and complete them by choosing the correct answer from hints.</string>
+    <string name="EQ1AP1">a. Ken has three baseball</string>
+    <string name="EQ1AP2">.</string>
+    <string name="EQ1AH1">bats</string>
+    <string name="EQ1AH2">bat</string>
+    <string name="EQ1AH3">bates</string>
+    <string name="EQ1BP1">b.</string>
+    <string name="EQ1BP2">camel is the ship of the desert.</string>
+    <string name="EQ1BH1">A</string>
+    <string name="EQ1BH2">An</string>
+    <string name="EQ1BH3">The</string>
+
+    <!--English Question 2 (9 Marks)-->
+    <string name="EQ2">Type the verb in each sentence.</string>
+    <string name="EQ2A">a. Harry wrote an essay about her vacation to France.</string>
+    <string name="EQ2B">b. The teacher was running in the playground.</string>
+    <string name="EQ2C">c. Bobby forgot his trumpet at home.</string>
+
+    <!--English Question 3 (6 Marks)-->
+    <string name="EQ3">Read the passage then answer the questions below:\n\nJack likes baseball. He plays every day after school. He also plays on weekends. Jack likes first base best. He plays first base for the town team. He reads books about baseball. In the summer he plays ball at sports camp. Jack wants to be a baseball player when he grows up.</string>
+    <string name="EQ3A">a. The story is all about </string>
+    <string name="EQ3AH1">Jack.</string>
+    <string name="EQ3AH2">how to play baseball.</string>
+    <string name="EQ3AH3">sports camp.</string>
+    <string name="EQ3B">b. After school, Jack </string>
+    <string name="EQ3BH1">watches TV.</string>
+    <string name="EQ3BH2">goes to camp.</string>
+    <string name="EQ3BH3">plays Baseball.</string>
+    <string name="EQ3C">c. When he grows up, he wants to be</string>
+    <string name="EQ3CH1">a baseball player.</string>
+    <string name="EQ3CH2">a baseball coach.</string>
+    <string name="EQ3CH3">a sportswriter.</string>
+
+    <!--Mathematics Question 1 (3 marks)-->
+    <string name="MQ1">Select all those options that are correct for the following number.</string>
+    <string name="number">27</string>
+    <string name="MQ1O1">It is greater than 15.</string>
+    <string name="MQ1O2">It is a Even number.</string>
+    <string name="MQ1O3">It is a Odd number.</string>
+    <string name="MQ1O4">It is smaller than 45.</string>
+
+    <!--Mathematics Question 2 (3 marks)-->
+    <string name="MQ2">Add the following two numbers.</string>
+    <string name="numberOne">124</string>
+    <string name="numberTwo">565</string>
+
+    <!--Mathematics Question 3-->
+    <string name="MQ3">Write in figures.</string>
+    <string name="MQ3A">a. Twenty-six</string>
+    <string name="MQ3B">b. Fifty-two</string>
+    <string name="MQ3C">c. Sixteen</string>
+</resources>
