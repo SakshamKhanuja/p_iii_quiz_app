@@ -112,6 +112,11 @@
         <item name="android:background">@drawable/shape_blank</item>
     </style>
 
+    <style name="LayoutBlankStyle" parent="BlankStyle">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
     <style name="EditTextStyle" parent="ShapeStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/colorText</item>
@@ -161,5 +166,11 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:textSize">36sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BlankLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
     </style>
 </resources>

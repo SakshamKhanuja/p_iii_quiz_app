@@ -21,11 +21,13 @@
             style="@style/ShapeLL"
             app:singleSelection="true">
 
+            <!--Chip English-->
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_sub_english"
                 style="@style/BasicView"
                 android:text="@string/subEnglish" />
 
+            <!--Chip Mathematics-->
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_sub_mathematics"
                 style="@style/BasicView"
@@ -76,6 +78,7 @@
                     android:text="@string/subEnglish"
                     android:textSize="45sp" />
 
+                <!--Label - Quiz-->
                 <TextView
                     style="@style/QuizLabelStyle"
                     android:text="@string/labelQuiz" />
@@ -83,10 +86,12 @@
                 <!--Question 1-->
                 <LinearLayout style="@style/QuestionContainer">
 
+                    <!--Label - Question 1-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberOne" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginTop="16dp"
@@ -98,16 +103,19 @@
                         android:layout_marginVertical="16dp"
                         android:gravity="center_vertical">
 
+                        <!--Question 1 - A - Part 1-->
                         <TextView
                             style="@style/BasicView"
                             android:text="@string/EQ1AP1" />
 
+                        <!--Question 1 - A - Blank-->
                         <TextView
-                            android:id="@+id/blank_one_a"
+                            android:id="@+id/blank_e_q1_a"
                             style="@style/BlankStyle"
                             android:layout_width="80dp"
                             android:background="@drawable/shape_blank" />
 
+                        <!--Question 1 - A - Part 2-->
                         <TextView
                             style="@style/BasicView"
                             android:text="@string/EQ1AP2" />
@@ -117,21 +125,30 @@
                     <!--Question 1 - A - List-->
                     <LinearLayout style="@style/ListStyle">
 
+                        <!--User picks hints for Question 1 - A here-->
                         <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/group_chip_e_q1_a"
                             style="@style/BasicView"
                             app:singleSelection="true">
 
+                            <!--Chip bats-->
                             <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_e_q1_a_1"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1AH1" />
 
+                            <!--Chip bat-->
                             <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_e_q1_a_2"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1AH2" />
 
+                            <!--Chip bates-->
                             <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_e_q1_a_3"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1AH3" />
+
                         </com.google.android.material.chip.ChipGroup>
 
                     </LinearLayout>
@@ -142,15 +159,19 @@
                         android:layout_marginVertical="16dp"
                         android:gravity="center_vertical">
 
+                        <!--Question 1 - B - Part 1-->
                         <TextView
                             style="@style/BasicView"
                             android:text="@string/EQ1BP1" />
 
+                        <!--Question 1 - B - Blank-->
                         <TextView
+                            android:id="@+id/blank_e_q1_b"
                             style="@style/BlankStyle"
                             android:layout_width="60dp"
                             android:background="@drawable/shape_blank" />
 
+                        <!--Question 1 - B - Part 2-->
                         <TextView
                             style="@style/BasicView"
                             android:text="@string/EQ1BP2" />
@@ -160,23 +181,30 @@
                     <!--Question 1 - B - List-->
                     <LinearLayout style="@style/ListStyle">
 
+                        <!--User picks hints for Question 1 - B here-->
                         <com.google.android.material.chip.ChipGroup
-                            android:id="@+id/question_one_b_list"
+                            android:id="@+id/group_chip_e_q1_b"
                             style="@style/BasicView"
                             app:singleSelection="true">
 
+                            <!--Chips A-->
                             <com.google.android.material.chip.Chip
-                                android:id="@+id/question"
+                                android:id="@+id/chip_e_q1_b_1"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1BH1" />
 
+                            <!--Chips An-->
                             <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_e_q1_b_2"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1BH2" />
 
+                            <!--Chips The-->
                             <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_e_q1_b_3"
                                 style="@style/BasicView"
                                 android:text="@string/EQ1BH3" />
+
                         </com.google.android.material.chip.ChipGroup>
 
                     </LinearLayout>
@@ -186,38 +214,49 @@
                 <!--Question 2-->
                 <LinearLayout style="@style/QuestionContainer">
 
+                    <!--Label - Question 2-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberTwo" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginVertical="16dp"
                         android:text="@string/EQ2" />
 
+                    <!--Question 2 - A-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ2A" />
 
+                    <!--User enter 2 - A here-->
                     <EditText
+                        android:id="@+id/entry_e_q2_a"
                         style="@style/EditTextStyle"
                         android:hint="@string/hintWord"
                         android:importantForAutofill="no" />
 
+                    <!--Question 2 - B-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ2B" />
 
+                    <!--User enter 2 - B here-->
                     <EditText
+                        android:id="@+id/entry_e_q2_b"
                         style="@style/EditTextStyle"
                         android:hint="@string/hintWord"
                         android:importantForAutofill="no" />
 
+                    <!--Question 2 - C-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ2C" />
 
+                    <!--User enter 2 - C here-->
                     <EditText
+                        android:id="@+id/entry_e_q2_c"
                         style="@style/EditTextStyle"
                         android:layout_marginBottom="0dp"
                         android:hint="@string/hintWord"
@@ -228,103 +267,164 @@
                 <!--Question 3-->
                 <LinearLayout style="@style/QuestionContainer">
 
+                    <!--Label - Question 3-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberThree" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginVertical="16dp"
                         android:text="@string/EQ3" />
 
+                    <!--Question 3 - A-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ3A" />
 
-                    <TextView
-                        style="@style/BlankStyle"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/shape_blank" />
+                    <LinearLayout
+                        style="@style/BlankLayout"
+                        android:layout_marginTop="8dp">
+
+                        <!--Question 3 - A - Blank-->
+                        <TextView
+                            android:id="@+id/blank_e_q3_a"
+                            style="@style/LayoutBlankStyle" />
+
+                        <!--.-->
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1AP2" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         style="@style/ListStyle"
                         android:layout_marginVertical="16dp">
 
-                        <RadioGroup style="@style/BasicView">
+                        <!--User picks options for Question 3 - A here-->
+                        <RadioGroup
+                            android:id="@+id/group_radio_e_q3_a"
+                            style="@style/BasicView">
 
+                            <!--RadioButton Jack.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_a_1"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3AH1" />
 
+                            <!--RadioButton how to play basketball.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_a_2"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3AH2" />
 
+                            <!--RadioButton sports camp.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_a_3"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3AH3" />
                         </RadioGroup>
 
                     </LinearLayout>
 
-
+                    <!--Question 3 - B-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ3B" />
 
-                    <TextView
-                        style="@style/BlankStyle"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/shape_blank" />
+                    <LinearLayout
+                        style="@style/BlankLayout"
+                        android:layout_marginTop="8dp">
+
+                        <!--Question 3 - B - Blank-->
+                        <TextView
+                            android:id="@+id/blank_e_q3_b"
+                            style="@style/LayoutBlankStyle" />
+
+                        <!--.-->
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1AP2" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         style="@style/ListStyle"
                         android:layout_marginVertical="16dp">
 
-                        <RadioGroup style="@style/BasicView">
+                        <!--User picks options for Question 3 - B here-->
+                        <RadioGroup
+                            android:id="@+id/group_radio_e_q3_b"
+                            style="@style/BasicView">
 
+                            <!--RadioButton watches TV.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_b_1"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3BH1" />
 
+                            <!--RadioButton goes to camp.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_b_2"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3BH2" />
 
+                            <!--RadioButton play Baseball.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_b_3"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3BH3" />
                         </RadioGroup>
 
                     </LinearLayout>
 
+                    <!--Question 3 - C-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/EQ3C" />
 
-                    <TextView
-                        style="@style/BlankStyle"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/shape_blank" />
+                    <LinearLayout
+                        style="@style/BlankLayout"
+                        android:layout_marginTop="8dp">
+
+                        <!--Question 3 - C - Blank-->
+                        <TextView
+                            android:id="@+id/blank_e_q3_c"
+                            style="@style/LayoutBlankStyle" />
+
+                        <!--.-->
+                        <TextView
+                            style="@style/BasicView"
+                            android:text="@string/EQ1AP2" />
+
+                    </LinearLayout>
 
                     <LinearLayout
                         style="@style/ListStyle"
                         android:layout_marginTop="16dp">
 
-                        <RadioGroup style="@style/BasicView">
+                        <!--User picks options for Question 3 - C here-->
+                        <RadioGroup
+                            android:id="@+id/group_radio_e_q3_c"
+                            style="@style/BasicView">
 
+                            <!--RadioButton a baseball player.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_c_1"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3CH1" />
 
+                            <!--RadioButton a baseball coach.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_c_2"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3CH2" />
 
+                            <!--RadioButton a sportswriter.-->
                             <RadioButton
+                                android:id="@+id/radio_e_q3_c_3"
                                 style="@style/RadioButtonStyle"
                                 android:text="@string/EQ3CH3" />
                         </RadioGroup>
@@ -347,6 +447,7 @@
                     android:text="@string/subMathematics"
                     android:textSize="45sp" />
 
+                <!--Label - Quiz-->
                 <TextView
                     style="@style/QuizLabelStyle"
                     android:text="@string/labelQuiz" />
@@ -354,15 +455,18 @@
                 <!--Question 1-->
                 <LinearLayout style="@style/QuestionContainer">
 
+                    <!--Label - Question 1-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberOne" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginTop="16dp"
                         android:text="@string/MQ1" />
 
+                    <!--27-->
                     <TextView
                         style="@style/NumberStyle"
                         android:layout_gravity="center_horizontal"
@@ -371,21 +475,30 @@
                     <LinearLayout
                         style="@style/ListStyle"
                         android:layout_marginTop="16dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        tools:ignore="TooManyViews">
 
+                        <!--CheckBox It is greater than 15.-->
                         <CheckBox
+                            android:id="@+id/checkbox_m_q1_I"
                             style="@style/CheckBoxStyle"
                             android:text="@string/MQ1O1" />
 
+                        <!--CheckBox It is a Even number.-->
                         <CheckBox
+                            android:id="@+id/checkbox_m_q1_II"
                             style="@style/CheckBoxStyle"
                             android:text="@string/MQ1O2" />
 
+                        <!--CheckBox It is a Odd number.-->
                         <CheckBox
+                            android:id="@+id/checkbox_m_q1_III"
                             style="@style/CheckBoxStyle"
                             android:text="@string/MQ1O3" />
 
+                        <!--CheckBox It is smaller than 45.-->
                         <CheckBox
+                            android:id="@+id/checkbox_m_q1_IV"
                             style="@style/CheckBoxStyle"
                             android:text="@string/MQ1O4" />
 
@@ -398,34 +511,43 @@
                     style="@style/QuestionContainer"
                     tools:ignore="TooManyViews">
 
+                    <!--Label - Question 2-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberTwo" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginTop="16dp"
                         android:text="@string/MQ2" />
 
+                    <!--Visual representation of adding two numbers.-->
                     <LinearLayout
                         style="@style/BasicVerticalLL"
                         android:layout_gravity="center_horizontal">
 
+                        <!--124-->
                         <TextView
                             style="@style/NumberStyle"
                             android:letterSpacing="1"
                             android:text="@string/numberOne" />
 
+                        <!--565-->
                         <TextView
                             style="@style/NumberStyle"
                             android:layout_marginBottom="8dp"
                             android:letterSpacing="1"
                             android:text="@string/numberTwo" />
 
+                        <!--Divider-->
                         <View style="@style/Divider" />
 
+                        <!--User enters sum of two numbers here.-->
                         <EditText
+                            android:id="@+id/entry_m_q2"
                             style="@style/EditTextEntryStyle"
+                            android:hint="@string/numberHint"
                             android:layout_marginBottom="0dp"
                             android:importantForAutofill="no"
                             android:letterSpacing="0.5" />
@@ -439,42 +561,56 @@
                     style="@style/QuestionContainer"
                     tools:ignore="TooManyViews">
 
+                    <!--Label - Question 3-->
                     <TextView
                         style="@style/QuizLabelStyle"
                         android:text="@string/questionNumberThree" />
 
+                    <!--Question-->
                     <TextView
                         style="@style/BasicView"
                         android:layout_marginVertical="16dp"
                         android:text="@string/MQ3" />
 
+                    <!--Question 3 - A-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/MQ3A" />
 
+                    <!--User enter 3 - A here-->
                     <EditText
+                        android:id="@+id/entry_m_q3_a"
                         style="@style/EditTextEntryStyle"
                         android:layout_width="100dp"
+                        android:hint="@string/numberHintTwo"
                         android:layout_marginStart="24dp"
                         android:importantForAutofill="no" />
 
+                    <!--Question 3 - B-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/MQ3B" />
 
+                    <!--User enter 3 - B here-->
                     <EditText
+                        android:id="@+id/entry_m_q3_b"
                         style="@style/EditTextEntryStyle"
+                        android:hint="@string/numberHintTwo"
                         android:layout_width="100dp"
                         android:layout_marginStart="24dp"
                         android:importantForAutofill="no" />
 
+                    <!--Question 3 - C-->
                     <TextView
                         style="@style/BasicView"
                         android:text="@string/MQ3C" />
 
+                    <!--User enter 3 - C here-->
                     <EditText
+                        android:id="@+id/entry_m_q3_c"
                         style="@style/EditTextEntryStyle"
                         android:layout_width="100dp"
+                        android:hint="@string/numberHintTwo"
                         android:layout_marginStart="24dp"
                         android:importantForAutofill="no" />
 

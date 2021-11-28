@@ -7,11 +7,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
 import com.project.quiz_app.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding mBinding;
 
     // Title of Quiz English.
-    private final String ENGLISH = "English";
+    private static final String ENGLISH = "English";
 
     // Title of Quiz Mathematics.
-    private final String MATHEMATICS = "Mathematics";
+    private static final String MATHEMATICS = "Mathematics";
 
     private final String CHIP_SUBJECT_KEY = "selectedSubjectChip";
 
@@ -82,11 +83,137 @@ public class MainActivity extends AppCompatActivity {
         // Registering a callback when the "Reset" TextView is clicked.
         mBinding.textViewReset.setOnClickListener(view -> reset());
 
+        /*
+         * Registering a callback when "Question 1 - English - a." Chips are selected /
+         * de-selected by the user.
+         */
+        mBinding.groupChipEQ1A.setOnCheckedChangeListener((group, checkedId) ->
+                fillBlank(mBinding.blankEQ1A, checkedId, 1));
+
+        /*
+         * Registering a callback when "Question 1 - English - b." Chips are selected /
+         * de-selected by the user.
+         */
+        mBinding.groupChipEQ1B.setOnCheckedChangeListener((group, checkedId) ->
+                fillBlank(mBinding.blankEQ1B, checkedId, 1));
+
+        /*
+         * Registering a callback when "Question 3 - English - a." RadioButtons are selected by
+         * the user.
+         */
+        mBinding.groupRadioEQ3A.setOnCheckedChangeListener((group, checkedId) ->
+                fillBlank(mBinding.blankEQ3A, checkedId, 2));
+
+        /*
+         * Registering a callback when "Question 3 - English - b." RadioButtons are selected by
+         * the user.
+         */
+        mBinding.groupRadioEQ3B.setOnCheckedChangeListener((group, checkedId) ->
+                fillBlank(mBinding.blankEQ3B, checkedId, 2));
+
+        /*
+         * Registering a callback when "Question 3 - English - c." RadioButtons are selected by
+         * the user.
+         */
+        mBinding.groupRadioEQ3C.setOnCheckedChangeListener((group, checkedId) ->
+                fillBlank(mBinding.blankEQ3C, checkedId, 2));
+
         // Restore the current progress - If device is rotated.
         if (savedInstanceState != null) {
             restoreCurrentProgress(savedInstanceState);
         }
     }
+
+    /**
+     * Fills up the blank based on user choice.
+     *
+     * @param blank     is the TexView having shape {@link R.drawable#shape_blank}.
+     * @param checkedID is the ID of the selected View.
+     * @param viewType  is type of the selected View.
+     *                  1 - Chip
+     *                  2 - RadioButton
+     */
+    private void fillBlank(TextView blank, int checkedID, int viewType) {
+        String text = "";
+        if (checkedID != View.NO_ID) {
+            if (viewType == 1) {
+                Chip selectedChip = findViewById(checkedID);
+                text = selectedChip.getText().toString();
+            } else if (viewType == 2) {
+                RadioButton selectedRadioButton = findViewById(checkedID);
+                text = selectedRadioButton.getText().toString();
+            }
+        }
+        blank.setText(text);
+    }
+
+    /**
+     * Resets English Quiz.
+     */
+    private void resetEnglishQuiz() {
+        // Clear blank TextView "Question 1 - A".
+        mBinding.blankEQ1A.setText("");
+
+        // Uncheck the checked "Question 1 - A".
+        mBinding.groupChipEQ1A.clearCheck();
+
+        // Clear blank TextView "Question 1 - B".
+        mBinding.blankEQ1B.setText("");
+
+        // Uncheck the checked "Question 1 - B".
+        mBinding.groupChipEQ1B.clearCheck();
+
+        // Clear EditText "Question 2 - A".
+        mBinding.entryEQ2A.setText("");
+
+        // Clear EditText "Question 2 - B".
+        mBinding.entryEQ2B.setText("");
+
+        // Clear EditText "Question 2 - C".
+        mBinding.entryEQ2C.setText("");
+
+        // Clear blank TextView "Question 3 - A".
+        mBinding.blankEQ3A.setText("");
+
+        // Uncheck the checked "Question 3 - A".
+        mBinding.groupRadioEQ3A.clearCheck();
+
+        // Clear blank TextView "Question 3 - B".
+        mBinding.blankEQ3B.setText("");
+
+        // Uncheck the checked "Question 3 - B".
+        mBinding.groupRadioEQ3B.clearCheck();
+
+        // Clear blank TextView "Question 3 - C".
+        mBinding.blankEQ3C.setText("");
+
+        // Uncheck the checked "Question 3 - C".
+        mBinding.groupRadioEQ3C.clearCheck();
+    }
+
+    /**
+     * Resets Mathematics Quiz.
+     */
+    private void resetMathematicsQuiz() {
+        // Uncheck CheckBox's in "Question 1".
+        mBinding.checkboxMQ1I.setChecked(false);
+        mBinding.checkboxMQ1II.setChecked(false);
+        mBinding.checkboxMQ1III.setChecked(false);
+        mBinding.checkboxMQ1IV.setChecked(false);
+
+        // Clear EditText in "Question 2".
+        mBinding.entryMQ2.setText("");
+
+        // Clear EditText in "Question 3 - A".
+        mBinding.entryMQ3A.setText("");
+
+        // Clear EditText in "Question 3 - B".
+        mBinding.entryMQ3B.setText("");
+
+        // Clear EditText in "Question 3 - C".
+        mBinding.entryMQ3C.setText("");
+    }
+
 
     /**
      * Restores the current progress.
@@ -150,7 +277,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Send Toasts to user.
         if (currentSubject != 0) {
-
             // User opened up the Quiz in correct order.
             userStartedQuizInOrder = 1;
 
@@ -202,12 +328,14 @@ public class MainActivity extends AppCompatActivity {
         // Hide the current Quiz.
         switch (currentSubject) {
             case 1:
-                // Shows the "English" Quiz.
+                resetEnglishQuiz();
+                // Hides the "English" Quiz.
                 mBinding.quizEnglish.setVisibility(View.GONE);
                 break;
 
             case 2:
-                // Shows the "Mathematics" Quiz.
+                resetMathematicsQuiz();
+                // Hides the "Mathematics" Quiz.
                 mBinding.quizMathematics.setVisibility(View.GONE);
                 break;
         }
@@ -223,6 +351,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Make FAB press check FALSE.
         userPressedFAB = 0;
+
+        // Defaults user button pressed order.
+        userStartedQuizInOrder = 0;
 
         // Show the Quiz Picker
         showSection(0);
