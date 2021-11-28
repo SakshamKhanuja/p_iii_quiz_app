@@ -53,25 +53,19 @@
     <string name="ansEQ2A">wrote</string>
     <string name="EQ2B">b. The teacher was running in the playground.</string>
     <string name="ansEQ2B">running</string>
-    <string name="EQ2C">c. Bobby forgot his trumpet at home.</string>
-    <string name="ansEQ2C">forgot</string>
-    <string name="marksEQ2">(9 Marks)</string>
+    <string name="marksEQ2">(6 Marks)</string>
 
     <!--English Question 3-->
     <string name="EQ3">Read the passage then answer the questions below:\n\nJack likes baseball. He plays every day after school. He also plays on weekends. Jack likes first base best. He plays first base for the town team. He reads books about baseball. In the summer he plays ball at sports camp. Jack wants to be a baseball player when he grows up.</string>
-    <string name="EQ3A">a. The story is all about </string>
-    <string name="EQ3AH1">Jack</string>
-    <string name="EQ3AH2">how to play baseball</string>
-    <string name="EQ3AH3">sports camp</string>
-    <string name="EQ3B">b. After school, Jack </string>
-    <string name="EQ3BH1">watches TV</string>
-    <string name="EQ3BH2">goes to camp</string>
-    <string name="EQ3BH3">plays Baseball</string>
-    <string name="EQ3C">c. When he grows up, he wants to be</string>
-    <string name="EQ3CH1">a baseball player</string>
-    <string name="EQ3CH2">a baseball coach</string>
-    <string name="EQ3CH3">a sportswriter</string>
-    <string name="marksEQ3">(9 Marks)</string>
+    <string name="EQ3A">a. After school, Jack </string>
+    <string name="EQ3AH1">watches TV</string>
+    <string name="EQ3AH2">goes to camp</string>
+    <string name="EQ3AH3">plays Baseball</string>
+    <string name="EQ3B">b. When he grows up, he wants to be</string>
+    <string name="EQ3BH1">a baseball player</string>
+    <string name="EQ3BH2">a baseball coach</string>
+    <string name="EQ3BH3">a sportswriter</string>
+    <string name="marksEQ3">(6 Marks)</string>
 
     <!--Mathematics Question 1-->
     <string name="MQ1">Select all those options that are correct for the following number.</string>
@@ -91,13 +85,8 @@
     <string name="marksMQ2">(5 Marks)</string>
 
     <!--Mathematics Question 3-->
-    <string name="MQ3">Write in figures.</string>
-    <string name="MQ3A">a. Twenty-six</string>
-    <string name="MQ3B">b. Fifty-two</string>
-    <string name="MQ3C">c. Sixteen</string>
+    <string name="MQ3">Write the number twenty-six in figures.</string>
     <string name="numberHintTwo">--</string>
-    <string name="ansMQ3A">26</string>
-    <string name="ansMQ3B">52</string>
-    <string name="ansMQ3C">16</string>
-    <string name="marksMQ3">(6 Marks)</string>
+    <string name="ansMQ3">26</string>
+    <string name="marksMQ3">(2 Marks)</string>
 </resources>

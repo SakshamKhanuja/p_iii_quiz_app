@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String MATHEMATICS = "Mathematics";
 
     // English Quiz Max Score.
-    private static final int QUIZ_ENGLISH_SCORE = 28;
+    private static final int QUIZ_ENGLISH_SCORE = 22;
 
     // Mathematics Quiz Max Score.
-    private static final int QUIZ_MATHEMATICS_SCORE = 16;
+    private static final int QUIZ_MATHEMATICS_SCORE = 12;
 
     // Used in restoring Views after orientation change.
     private final String CHIP_SUBJECT_KEY = "selectedSubjectChip";
@@ -155,13 +155,6 @@ public class MainActivity extends AppCompatActivity {
         mBinding.groupRadioEQ3B.setOnCheckedChangeListener((group, checkedId) ->
                 fillBlank(mBinding.blankEQ3B, checkedId, 2));
 
-        /*
-         * Registering a callback when "Question 3 - English - c." RadioButtons are selected by
-         * the user.
-         */
-        mBinding.groupRadioEQ3C.setOnCheckedChangeListener((group, checkedId) ->
-                fillBlank(mBinding.blankEQ3C, checkedId, 2));
-
         // Registering a callback when the "Submit" TextView is clicked.
         mBinding.textViewSubmit.setOnClickListener(view -> submitQuiz(currentSubject));
 
@@ -216,26 +209,17 @@ public class MainActivity extends AppCompatActivity {
         // Clear EditText "Question 2 - B".
         mBinding.entryEQ2B.setText("");
 
-        // Clear EditText "Question 2 - C".
-        mBinding.entryEQ2C.setText("");
-
         // Clear blank TextView "Question 3 - A".
         mBinding.blankEQ3A.setText("");
-
-        // Uncheck the checked "Question 3 - A".
-        mBinding.groupRadioEQ3A.clearCheck();
 
         // Clear blank TextView "Question 3 - B".
         mBinding.blankEQ3B.setText("");
 
+        // Uncheck the checked "Question 3 - A".
+        mBinding.groupRadioEQ3A.clearCheck();
+
         // Uncheck the checked "Question 3 - B".
         mBinding.groupRadioEQ3B.clearCheck();
-
-        // Clear blank TextView "Question 3 - C".
-        mBinding.blankEQ3C.setText("");
-
-        // Uncheck the checked "Question 3 - C".
-        mBinding.groupRadioEQ3C.clearCheck();
     }
 
     /**
@@ -252,15 +236,8 @@ public class MainActivity extends AppCompatActivity {
         mBinding.entryMQ2.setText("");
 
         // Clear EditText in "Question 3 - A".
-        mBinding.entryMQ3A.setText("");
-
-        // Clear EditText in "Question 3 - B".
-        mBinding.entryMQ3B.setText("");
-
-        // Clear EditText in "Question 3 - C".
-        mBinding.entryMQ3C.setText("");
+        mBinding.entryMQ3.setText("");
     }
-
 
     /**
      * Restores the current progress.
@@ -478,23 +455,13 @@ public class MainActivity extends AppCompatActivity {
             score += 3;
         }
 
-        // Checks Question 2 - C (3 marks).
-        if (formatUserResponse(mBinding.entryEQ2C).equals(getString(R.string.ansEQ2C))) {
-            score += 3;
-        }
-
         // Checks Question 3 - A (3 marks).
-        if (mBinding.blankEQ3A.getText().toString().equals(getString(R.string.EQ3AH1))) {
+        if (mBinding.blankEQ3A.getText().toString().equals(getString(R.string.EQ3AH3))) {
             score += 3;
         }
 
         // Checks Question 3 - B (3 marks).
-        if (mBinding.blankEQ3B.getText().toString().equals(getString(R.string.EQ3BH3))) {
-            score += 3;
-        }
-
-        // Checks Question 3 - C (3 marks).
-        if (mBinding.blankEQ3C.getText().toString().equals(getString(R.string.EQ3CH1))) {
+        if (mBinding.blankEQ3B.getText().toString().equals(getString(R.string.EQ3BH1))) {
             score += 3;
         }
 
@@ -520,18 +487,8 @@ public class MainActivity extends AppCompatActivity {
             score += 5;
         }
 
-        // Checks Question 3 - A (2 marks).
-        if (formatUserResponse(mBinding.entryMQ3A).equals(getString(R.string.ansMQ3A))) {
-            score += 2;
-        }
-
-        // Checks Question 3 - B (2 marks).
-        if (formatUserResponse(mBinding.entryMQ3B).equals(getString(R.string.ansMQ3B))) {
-            score += 2;
-        }
-
-        // Checks Question 3 - C (2 marks).
-        if (formatUserResponse(mBinding.entryMQ3C).equals(getString(R.string.ansMQ3C))) {
+        // Checks Question 3 (2 marks).
+        if (formatUserResponse(mBinding.entryMQ3).equals(getString(R.string.ansMQ3))) {
             score += 2;
         }
 
