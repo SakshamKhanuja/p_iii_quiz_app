@@ -21,8 +21,17 @@
     <string name="questionNumberThree">Question 3</string>
     <string name="list">List</string>
     <string name="hintWord">Type verb here…</string>
-    <string name="quizScore">You scored - <xliff:g id="userScore">%d</xliff:g>/<xliff:g id = "maxScore">%d</xliff:g></string>
+    <string name="quizScore">You scored - <xliff:g id="userScore">%d</xliff:g>/<xliff:g id="maxScore">%d</xliff:g></string>
 
+    <!--Naming Convention
+
+    E - English Quiz
+    M - Mathematics Quiz
+    Q - Question (Followed by a question no., example Q1)
+    A - Part of question (Example - Q1A Part a. of question 1)
+    P - Sub-part of question (Example - Q1AP1 - First half of Part a. of Question 1)
+    H - Hint (Example - EQ1BH3 - 3rd hint (View) of Part B of Question 1 in English Quiz)
+    O - Options (Used in CheckBox) (Example - MQ1O4 - 4th CheckBox of Question 1 of Math Quiz)-->
 
     <!--English Question 1-->
     <string name="EQ1">Read each sentence and complete them by choosing the correct answer from hints.</string>

@@ -43,7 +43,7 @@
 
         <!--User picks subject here-->
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/group_subjects"
+            android:id="@+id/group_chip_subjects"
             style="@style/ShapeLL"
             app:singleSelection="true">
 

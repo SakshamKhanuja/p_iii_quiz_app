@@ -26,6 +26,26 @@ import com.project.quiz_app.databinding.ActivityMainBinding;
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Naming Convention:
+     * <p>
+     * --Views
+     * 1. Chip - chip
+     * 2. ChipGroup - group_chip
+     * 3. TextView having background {@link R.drawable#shape_blank} - blank
+     * 4. EditText having background {@link R.drawable#shape_hint} - entry
+     * 5. CheckBox - checkBox
+     * 6. RadioButton - radio
+     * 7. RadioGroup - group_radio
+     * <p>
+     * --View ID -> [ViewType_QuizType_QuestionNumber_QuestionPart_[SubPart/Hint]]
+     * Example: mBinding.groupChipEQ1A / findViewById(R.id.group_chip_e_q1_a)
+     * The above ID represents "ChipGroup" View under "a." of "Question 1" in "English" quiz.
+     * Link -> {@link R.id#group_chip_e_q1_a}
+     * <p>
+     * --String Naming Convention -> Go to "strings.xml".
+     */
+
     // Performs View Binding.
     private ActivityMainBinding mBinding;
 
@@ -97,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(mBinding.getRoot());
 
         // Registering a callback when subject Chips are selected / de-selected by the user.
-        mBinding.groupSubjects.setOnCheckedChangeListener((group, checkedID) ->
+        mBinding.groupChipSubjects.setOnCheckedChangeListener((group, checkedID) ->
                 selectSubject(checkedID)
         );
 
@@ -262,13 +282,13 @@ public class MainActivity extends AppCompatActivity {
                     showSection(currentSubject);
                 } else {
                     // Show the checked Chip and Quiz Picker Section.
-                    mBinding.groupSubjects.check(savedInstanceState.getInt(CHIP_SUBJECT_KEY,
+                    mBinding.groupChipSubjects.check(savedInstanceState.getInt(CHIP_SUBJECT_KEY,
                             0));
                     showSection(0);
                 }
             } else if (checkedChipKey != 0) {
                 // Show the checked Chip and Quiz Picker Section.
-                mBinding.groupSubjects.check(savedInstanceState.getInt(CHIP_SUBJECT_KEY,
+                mBinding.groupChipSubjects.check(savedInstanceState.getInt(CHIP_SUBJECT_KEY,
                         0));
                 showSection(0);
             }
@@ -280,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         // Backing up the current checked Subject.
-        outState.putInt(CHIP_SUBJECT_KEY, mBinding.groupSubjects.getCheckedChipId());
+        outState.putInt(CHIP_SUBJECT_KEY, mBinding.groupChipSubjects.getCheckedChipId());
 
         // Backing up whether user has pressed the FAB "->".
         outState.putInt(PRESSED_FAB_KEY, userPressedFAB);
@@ -392,7 +412,7 @@ public class MainActivity extends AppCompatActivity {
         showSection(0);
 
         // Uncheck the checked Subject.
-        mBinding.groupSubjects.clearCheck();
+        mBinding.groupChipSubjects.clearCheck();
     }
 
     /**
