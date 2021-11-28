@@ -9,8 +9,8 @@
             <solid android:color="@color/colorButton" />
 
             <corners
-                android:topRightRadius="12dp"
-                android:bottomRightRadius="12dp" />
+                android:bottomRightRadius="12dp"
+                android:topRightRadius="12dp" />
 
         </shape>
 

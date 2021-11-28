@@ -74,6 +74,10 @@
         <item name="android:letterSpacing">0.1</item>
     </style>
 
+    <style name="MarksStyle" parent="QuizLabelStyle">
+        <item name="android:textSize">17sp</item>
+    </style>
+
     <!--Main Button Style-->
     <style name="MainButtonStyle">
         <item name="android:gravity">center</item>
@@ -110,6 +114,7 @@
         <item name="android:layout_marginStart">8dp</item>
         <item name="android:layout_marginEnd">8dp</item>
         <item name="android:background">@drawable/shape_blank</item>
+        <item name="android:text">&#160;</item>
     </style>
 
     <style name="LayoutBlankStyle" parent="BlankStyle">
@@ -171,6 +176,18 @@
     <style name="BlankLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="QuizLabelBlankLayout" parent="BlankLayout">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="QuizStyle">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
     </style>
 </resources>

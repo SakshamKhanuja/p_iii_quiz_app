@@ -7,6 +7,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -15,6 +16,14 @@ import android.widget.Toast;
 import com.google.android.material.chip.Chip;
 import com.project.quiz_app.databinding.ActivityMainBinding;
 
+/**
+ * This application lets a user pick among two subject quizzes -
+ * <p>
+ * 1. English
+ * 2. Mathematics
+ * <p>
+ * After submitting the quiz, a Toast shows the user's final score.
+ */
 public class MainActivity extends AppCompatActivity {
 
     // Performs View Binding.
@@ -26,30 +35,45 @@ public class MainActivity extends AppCompatActivity {
     // Title of Quiz Mathematics.
     private static final String MATHEMATICS = "Mathematics";
 
+    // English Quiz Max Score.
+    private static final int QUIZ_ENGLISH_SCORE = 28;
+
+    // Mathematics Quiz Max Score.
+    private static final int QUIZ_MATHEMATICS_SCORE = 16;
+
+    // Used in restoring Views after orientation change.
     private final String CHIP_SUBJECT_KEY = "selectedSubjectChip";
 
+    // Used in restoring Views after orientation change.
     private final String PRESSED_FAB_KEY = "userPressedFab";
 
+    // Used in restoring Views after orientation change.
     private final String SELECTED_QUIZ_KEY = "currentQuiz";
 
+    // Used in restoring Views after orientation change.
     private final String PROPER_ORDER_KEY = "orderedClicks";
 
-    /**
-     * Indicates in what order the user started a Quiz.
+    /*
+     * Indicates in which order the user has pressed buttons in the "Quiz Picker" Section.
      * <p>
-     * 0 - Press FAB "->" | Check Subject ----- WRONG Order
-     * 1 - Check Subject | Press FAB "->" ----- CORRECT Order
+     * 0 - Press FAB "->" | Check Subject
+     * 1 - Check Subject | Press FAB "->"
+     *
+     * This check avoids an invalid start of a quiz.
+     *
+     * Assuming the user has clicked the FAB "->" first, followed by checking a Subject
+     * (Chip - English / Mathematics). At this moment if user rotates their phone, initially
+     * the selected subject Quiz will automatically start. This check prevents that.
      */
     private int userStartedQuizInOrder = 0;
 
-    /**
+    /*
      * Indicates the state of FAB "->".
      * <p>
      * 0 - User has not pressed the FAB.
      * 1 - User has pressed the FAB.
      */
     private int userPressedFAB = 0;
-
 
     // Shows messages to the user.
     private Toast mToast;
@@ -117,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
          */
         mBinding.groupRadioEQ3C.setOnCheckedChangeListener((group, checkedId) ->
                 fillBlank(mBinding.blankEQ3C, checkedId, 2));
+
+        // Registering a callback when the "Submit" TextView is clicked.
+        mBinding.textViewSubmit.setOnClickListener(view -> submitQuiz(currentSubject));
 
         // Restore the current progress - If device is rotated.
         if (savedInstanceState != null) {
@@ -298,7 +325,10 @@ public class MainActivity extends AppCompatActivity {
         if (currentSubject != 0) {
             // Hides the Quiz picker.
             mBinding.sectionSubjectPicker.setVisibility(View.GONE);
+            mBinding.textviewTitle.setVisibility(View.GONE);
             mBinding.fabStart.setVisibility(View.GONE);
+            mBinding.image123.setVisibility(View.GONE);
+            mBinding.imageAbc.setVisibility(View.GONE);
 
             // Shows the Quiz Section.
             mBinding.sectionQuiz.setVisibility(View.VISIBLE);
@@ -317,7 +347,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Shows the Quiz Picker.
             mBinding.sectionSubjectPicker.setVisibility(View.VISIBLE);
+            mBinding.textviewTitle.setVisibility(View.VISIBLE);
             mBinding.fabStart.setVisibility(View.VISIBLE);
+            mBinding.image123.setVisibility(View.VISIBLE);
+            mBinding.imageAbc.setVisibility(View.VISIBLE);
         }
     }
 
@@ -385,6 +418,136 @@ public class MainActivity extends AppCompatActivity {
             // No subject is selected.
             currentSubject = 0;
         }
+    }
+
+    /**
+     * Formats the user response in EditText having background {@link R.drawable#shape_hint}.
+     *
+     * @param editText contains the user response.
+     * @return formatted (trimmed and lowercase) user response.
+     */
+    private String formatUserResponse(EditText editText) {
+        return editText.getText().toString().toLowerCase().trim();
+    }
+
+    /**
+     * Calculates the total score of user in English Quiz.
+     *
+     * @return total score.
+     */
+    private int calculateEnglishQuizResult() {
+        int score = 0;
+
+        // Checks Question 1 - A (5 marks).
+        if (mBinding.blankEQ1A.getText().toString().equals(getString(R.string.EQ1AH1))) {
+            score += 5;
+        }
+
+        // Checks Question 1 - B (5 marks).
+        if (mBinding.blankEQ1B.getText().toString().equals(getString(R.string.EQ1BH1))) {
+            score += 5;
+        }
+
+        // Checks Question 2 - A (3 marks).
+        if (formatUserResponse(mBinding.entryEQ2A).equals(getString(R.string.ansEQ2A))) {
+            score += 3;
+        }
+
+        // Checks Question 2 - B (3 marks).
+        if (formatUserResponse(mBinding.entryEQ2B).equals(getString(R.string.ansEQ2B))) {
+            score += 3;
+        }
+
+        // Checks Question 2 - C (3 marks).
+        if (formatUserResponse(mBinding.entryEQ2C).equals(getString(R.string.ansEQ2C))) {
+            score += 3;
+        }
+
+        // Checks Question 3 - A (3 marks).
+        if (mBinding.blankEQ3A.getText().toString().equals(getString(R.string.EQ3AH1))) {
+            score += 3;
+        }
+
+        // Checks Question 3 - B (3 marks).
+        if (mBinding.blankEQ3B.getText().toString().equals(getString(R.string.EQ3BH3))) {
+            score += 3;
+        }
+
+        // Checks Question 3 - C (3 marks).
+        if (mBinding.blankEQ3C.getText().toString().equals(getString(R.string.EQ3CH1))) {
+            score += 3;
+        }
+
+        return score;
+    }
+
+    /**
+     * Calculates the total score of user in Mathematics Quiz.
+     *
+     * @return total score.
+     */
+    private int calculateMathematicsQuizResult() {
+        int score = 0;
+
+        // Checks Question 1 (5 marks).
+        if (mBinding.checkboxMQ1I.isChecked() && mBinding.checkboxMQ1III.isChecked() &&
+                mBinding.checkboxMQ1IV.isChecked() && !mBinding.checkboxMQ1II.isChecked()) {
+            score += 5;
+        }
+
+        // Checks Question 2 (5 marks).
+        if (formatUserResponse(mBinding.entryMQ2).equals(getString(R.string.ansMQ2))) {
+            score += 5;
+        }
+
+        // Checks Question 3 - A (2 marks).
+        if (formatUserResponse(mBinding.entryMQ3A).equals(getString(R.string.ansMQ3A))) {
+            score += 2;
+        }
+
+        // Checks Question 3 - B (2 marks).
+        if (formatUserResponse(mBinding.entryMQ3B).equals(getString(R.string.ansMQ3B))) {
+            score += 2;
+        }
+
+        // Checks Question 3 - C (2 marks).
+        if (formatUserResponse(mBinding.entryMQ3C).equals(getString(R.string.ansMQ3C))) {
+            score += 2;
+        }
+
+        return score;
+    }
+
+    /**
+     * Calculates how much the user scored in the ongoing quiz. The total score is then showed
+     * to the user via Toast.
+     *
+     * @param currentSubject is the subject of the ongoing Quiz.
+     *                       1 - English
+     *                       2 - Mathematics
+     */
+    private void submitQuiz(int currentSubject) {
+        if (currentSubject == 1) {
+            showToast(getString(R.string.quizScore, calculateEnglishQuizResult(),
+                    QUIZ_ENGLISH_SCORE));
+        } else if (currentSubject == 2) {
+            showToast(getString(R.string.quizScore, calculateMathematicsQuizResult(),
+                    QUIZ_MATHEMATICS_SCORE));
+        }
+    }
+
+    /**
+     * Removes any Toast which is currently showing and replaces it with a new message.
+     *
+     * @param message is the new message.
+     */
+    private void showToast(String message) {
+        // Remove toast if currently showing.
+        if (mToast != null) {
+            mToast.cancel();
+        }
+        mToast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+        mToast.show();
     }
 
     /**

@@ -5,11 +5,12 @@
     <string name="subEnglish">English</string>
     <string name="subMathematics">Mathematics</string>
     <string name="fabDescription">Start the quiz.</string>
+    <string name="englishQuizDescription">Alphabet A, B and C.</string>
+    <string name="mathematicsQuizDescription">Number 1, 2 and 3.</string>
 
     <!--About Quiz App Toasts-->
     <string name="toastSelected">All The Best!</string>
     <string name="toastNotSelected">You haven\'t picked a Subject.</string>
-
 
     <!--Common among Subject Quiz-->
     <string name="labelQuiz">Quiz</string>
@@ -20,8 +21,10 @@
     <string name="questionNumberThree">Question 3</string>
     <string name="list">List</string>
     <string name="hintWord">Type verb here…</string>
+    <string name="quizScore">You scored - <xliff:g id="userScore">%d</xliff:g>/<xliff:g id = "maxScore">%d</xliff:g></string>
 
-    <!--English Question 1 (10 marks)-->
+
+    <!--English Question 1-->
     <string name="EQ1">Read each sentence and complete them by choosing the correct answer from hints.</string>
     <string name="EQ1AP1">a. Ken has three baseball</string>
     <string name="EQ1AP2">.</string>
@@ -33,14 +36,19 @@
     <string name="EQ1BH1">A</string>
     <string name="EQ1BH2">An</string>
     <string name="EQ1BH3">The</string>
+    <string name="marksEQ1">(10 Marks)</string>
 
-    <!--English Question 2 (9 Marks)-->
+    <!--English Question 2-->
     <string name="EQ2">Type the verb in each sentence.</string>
     <string name="EQ2A">a. Harry wrote an essay about her vacation to France.</string>
+    <string name="ansEQ2A">wrote</string>
     <string name="EQ2B">b. The teacher was running in the playground.</string>
+    <string name="ansEQ2B">running</string>
     <string name="EQ2C">c. Bobby forgot his trumpet at home.</string>
+    <string name="ansEQ2C">forgot</string>
+    <string name="marksEQ2">(9 Marks)</string>
 
-    <!--English Question 3 (6 Marks)-->
+    <!--English Question 3-->
     <string name="EQ3">Read the passage then answer the questions below:\n\nJack likes baseball. He plays every day after school. He also plays on weekends. Jack likes first base best. He plays first base for the town team. He reads books about baseball. In the summer he plays ball at sports camp. Jack wants to be a baseball player when he grows up.</string>
     <string name="EQ3A">a. The story is all about </string>
     <string name="EQ3AH1">Jack</string>
@@ -54,20 +62,24 @@
     <string name="EQ3CH1">a baseball player</string>
     <string name="EQ3CH2">a baseball coach</string>
     <string name="EQ3CH3">a sportswriter</string>
+    <string name="marksEQ3">(9 Marks)</string>
 
-    <!--Mathematics Question 1 (3 marks)-->
+    <!--Mathematics Question 1-->
     <string name="MQ1">Select all those options that are correct for the following number.</string>
     <string name="number">27</string>
     <string name="MQ1O1">It is greater than 15.</string>
     <string name="MQ1O2">It is a Even number.</string>
     <string name="MQ1O3">It is a Odd number.</string>
     <string name="MQ1O4">It is smaller than 45.</string>
+    <string name="marksMQ1">(5 Marks)</string>
 
-    <!--Mathematics Question 2 (3 marks)-->
+    <!--Mathematics Question 2-->
     <string name="MQ2">Add the following two numbers.</string>
     <string name="numberOne">124</string>
     <string name="numberTwo">565</string>
     <string name="numberHint">---</string>
+    <string name="ansMQ2">689</string>
+    <string name="marksMQ2">(5 Marks)</string>
 
     <!--Mathematics Question 3-->
     <string name="MQ3">Write in figures.</string>
@@ -75,4 +87,8 @@
     <string name="MQ3B">b. Fifty-two</string>
     <string name="MQ3C">c. Sixteen</string>
     <string name="numberHintTwo">--</string>
+    <string name="ansMQ3A">26</string>
+    <string name="ansMQ3B">52</string>
+    <string name="ansMQ3C">16</string>
+    <string name="marksMQ3">(6 Marks)</string>
 </resources>
