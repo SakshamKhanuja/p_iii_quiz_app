@@ -14,8 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/app_name"
-        android:textSize="36sp"
-        android:visibility="visible" />
+        android:textSize="36sp" />
 
     <ImageView
         android:id="@+id/image_abc"
@@ -24,8 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
         android:contentDescription="@string/englishQuizDescription"
-        android:src="@drawable/ic_abc_main"
-        android:visibility="visible" />
+        android:src="@drawable/ic_abc_main" />
 
     <ImageView
         android:id="@+id/image_123"
@@ -34,8 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/mathematicsQuizDescription"
-        android:src="@drawable/ic_123_main"
-        android:visibility="visible" />
+        android:src="@drawable/ic_123_main" />
 
     <!--Subject Picker Section-->
     <LinearLayout
@@ -77,7 +74,6 @@
         android:layout_marginBottom="32dp"
         android:contentDescription="@string/fabDescription"
         android:src="@drawable/ic_arrow"
-        android:visibility="visible"
         app:backgroundTint="@color/colorButton"
         app:rippleColor="@color/colorRipple"
         app:tint="@color/colorText" />
