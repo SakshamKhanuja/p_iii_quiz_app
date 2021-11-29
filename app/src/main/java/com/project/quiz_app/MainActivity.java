@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
         // Registering a callback when the FAB "->" is clicked by the user.
         mBinding.fabStart.setOnClickListener(view -> startQuiz());
 
-        // Registering a callback when the "Reset" TextView is clicked.
-        mBinding.textViewReset.setOnClickListener(view -> reset());
+        // Registering a callback when the "Reset" Button is clicked.
+        mBinding.buttonReset.setOnClickListener(view -> reset());
 
         /*
          * Registering a callback when "Question 1 - English - a." Chips are selected /
@@ -155,8 +155,8 @@ public class MainActivity extends AppCompatActivity {
         mBinding.groupRadioEQ3B.setOnCheckedChangeListener((group, checkedId) ->
                 fillBlank(mBinding.blankEQ3B, checkedId, 2));
 
-        // Registering a callback when the "Submit" TextView is clicked.
-        mBinding.textViewSubmit.setOnClickListener(view -> submitQuiz(currentSubject));
+        // Registering a callback when the "Submit" Button is clicked.
+        mBinding.buttonSubmit.setOnClickListener(view -> submitQuiz(currentSubject));
 
         // Restore the current progress - If device is rotated.
         if (savedInstanceState != null) {

@@ -617,11 +617,12 @@
                 android:layout_marginTop="16dp">
 
                 <!--Resets Quiz-->
-                <TextView
-                    android:id="@+id/textView_reset"
+                <Button
+                    android:id="@+id/button_reset"
                     style="@style/resetSubmitStyle"
                     android:background="@drawable/ripple_reset"
-                    android:text="@string/reset" />
+                    android:text="@string/reset"
+                    app:backgroundTint="@color/colorButton" />
 
                 <!--Divider-->
                 <View
@@ -629,11 +630,12 @@
                     android:layout_height="match_parent" />
 
                 <!--Submits Quiz-->
-                <TextView
-                    android:id="@+id/textView_submit"
+                <Button
+                    android:id="@+id/button_submit"
                     style="@style/resetSubmitStyle"
                     android:background="@drawable/ripple_submit"
-                    android:text="@string/submit" />
+                    android:text="@string/submit"
+                    app:backgroundTint="@color/colorButton" />
 
             </LinearLayout>
 
